@@ -1,39 +1,41 @@
+* {
+  margin:0;
+  padding:0;
+}
 body, html{
-    margin:0;
-    padding:0;
+    height: 100vh;
     font-size:18px;
     font-family:"Trebuchet MS";
     color:white;
 }
 
-  
+
 .mainContainer, .subContainer{
-    min-height:100vh;
-    font-size:15px;
-    display:flex;
-    flex-direction:column;
-    background: linear-gradient(-45deg, #1F2667, #50E3C2) no-repeat;
-    background-attachment:fixed;
+    min-height: 100vh;
+    font-size: 15px;
+    display: -webkit-flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(-45deg, #1F2667, #50E3C2) no-repeat;
 }
 
 .subContainer{
-  background: linear-gradient(-45deg, #50E3C2,#1F2667) no-repeat;
-   background-image: url(xch.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
+  background: -webkit-linear-gradient(-45deg, #50E3C2,#1F2667) no-repeat;
+  background-image: url(xch.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-  
+
 div.header, div.exchangeFunction{
     padding:10px;
     margin:30px 20px;
 }
-  
+
   div.menuBar{
     float:left !important;
     padding:10px;
   }
-  
+
   div#button button{
     padding:10px;
     background-color:transparent;
@@ -45,10 +47,10 @@ div.header, div.exchangeFunction{
     height:10%;
     color:white;
     min-width:20%;
-     margin-top:4px;
+    margin-top:4px;
    float:right !important;
   }
-  
+
   div.menu, div.menuShorter{
     width: 30px;
     height: 4px;
@@ -56,45 +58,41 @@ div.header, div.exchangeFunction{
     margin: 4px 0;
     border-radius:3px;
   }
-  
-  div.menuShorter{
-    width: 20px;
-  }
-  
-  div.title{
-    height:20%;
-  }
+
+  div.menuShorter{ width: 20px;}
 
 div.title p#t1{
   text-align:right;
   margin-right:10px;
   font-size:13px;
 }
-  
-  div.title h3, div.title h4{
-    text-align:center;
-  }
-  
-  div.exchangeFunction{
-    background-color:rgb(10,10,10,0.7);
-    box-shadow:2px 2px 5px black;
-    display:flex;
-    flex-direction:column;
-    min-width:65%;
-    width:70%;
-    height:80%;
-    margin: 0 auto;
-    border-radius:3px;
-    padding:30px ;
-  }
-  
-  div.title{
-    height:20%;
+
+  div.title h3, div.title h4{ text-align:center; }
+
+  div.title h3 { margin-top: 15px; padding-bottom: 5px; }
+
+  div.title{ height:20%; }
+
+  div.title h4{ color:#50E3C2; }
+
+  p#t2 {
+    text-align: left;
+    margin-top: -20px;
   }
 
-  div.title h4{
-    color:#50E3C2;
+  /* Main Section */
+  div.exchangeFunction{
+    background-color:rgb(10,10,10,0.7);
+    box-shadow: 2px 2px 5px black;
+    display: -webkit-flex;
+    flex-direction: column;
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 30px;
   }
+
 
   div.converter{
     display:flex;
@@ -102,9 +100,9 @@ div.title p#t1{
     align-items:center;
     margin:20px;
   }
-  
+
   div.start select#fromCurrency{
-    margin-right: 10px; 
+    margin-right: 10px;
 
     }
 
@@ -113,14 +111,14 @@ div.title p#t1{
     display:flex;
     justify-content:center;
   }
-  
+
   div#fromCurrImage img, div#toCurrImage img{
     border: 1px solid white;
     padding:8px 15px;
     float:left;
     min-width:25px;
   }
-  
+
   div#fromCurrImage select, div#toCurrImage select{
     background-color:transparent;
     outline:none;
@@ -131,7 +129,7 @@ div.title p#t1{
     min-width:50px;
     border-radius:0;
     }
-  
+
   div#fromCurrImage select option, div#toCurrImage select option{
     background-color:rgb(10,10,10,0.8);
   }
@@ -139,8 +137,8 @@ div.title p#t1{
   div.converter div.singleCurr{
     color:yellow;
   }
-  
-div.arrows {  
+
+div.arrows {
     padding: 0 15px 0 15px;
     height: 40%;
 }
@@ -148,13 +146,13 @@ div.arrows {
 div.arrows p#rotateArrow{
   transform: rotate(180deg);
 }
-  
+
 form{
     display:flex;
     flex-direction:column;
     align-items:center;
 }
-  
+
   form div{
     padding-top:5px;
     margin:20px 0;
@@ -169,7 +167,7 @@ form{
      border-radius:5px;
    padding:10px;
   }
-  
+
 form button{
     padding:15px;
     background-color:transparent;
@@ -184,12 +182,12 @@ form button{
     display:inline;
    margin:10px 0 0 13px;
   }
-  
+
 form button:hover{
     background-color:#50E3C2;
     color:black;
 }
-  
+
 div.inputs p{
    font-size:20px;
    margin:5px;
@@ -203,7 +201,7 @@ div.exchangeFunction p.link{
   font-size:12px;
 }
 
- p, .link a{
+ p.link a{
   color:white;
   text-decoration:none;
   font-size:12px;
@@ -213,25 +211,48 @@ p.link a:hover{
   color:#50E3C2;
 }
 
+/* Media Queries */
 
 @media screen and (max-width: 780px) {
 
+  body {
+     padding-bottom: 100px;
+     height: 100%;
+  }
+.mainContainer, .subContainer{
+  min-height: 120%;
+  padding: 0 0 20px 0;
+}
+
   div.exchangeFunction{
+    min-width: 80%;
+    height: auto;
     margin-bottom: 20px;
   }
-
-  .subContainer {
-    background-repeat: no-repeat;
-  
+  div.converter {
+    display: initial;
+  }
+  div.arrows {
+    display: none;
   }
 
-form button{ 
+form button{
       min-width: 25%;
 }
- 
+
 div#fromCurrImage img, div#toCurrImage img,
 div#fromCurrImage select, div#toCurrImage select{
  margin-top: 15px;
 }
- 
-}  
+
+  p.link a{
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  div.title h3, div.title h4 {
+    padding-top: 5px;
+  }
+
+
+}
