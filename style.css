@@ -217,7 +217,7 @@ p.link a:hover{
 
   body {
      padding-bottom: 60px;
-     height: 100%;
+     height: auto;
   }
 .mainContainer, .subContainer{
   min-height: 120%;
@@ -227,7 +227,7 @@ p.link a:hover{
   div.exchangeFunction{
     min-width: 80%;
     height: auto;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   div.converter {
     display: initial;
