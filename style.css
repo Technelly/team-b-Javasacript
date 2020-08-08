@@ -217,7 +217,7 @@ p.link a:hover{
 
   body {
      padding-bottom: 60px;
-     height: auto;
+     height: 100vh;
   }
 .mainContainer, .subContainer{
   min-height: 120%;
