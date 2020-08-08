@@ -1,4 +1,5 @@
 Javascript Exchange Rate Converter
+
 This project consists of two rate converters. 
 - The first one converts only from the US Dollar (base currency) to 150 currencies.
 - The second one converts between multiple currencies but limited to only 52 currencies.
