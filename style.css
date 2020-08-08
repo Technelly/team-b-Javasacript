@@ -59,16 +59,16 @@
 
   div.menuShorter{ width: 20px;}
 
+
   div.title p#t1{
   text-align:right;
   margin-right:10px;
   font-size:13px;
   }
-
 /*heading components styling*/
   div.title h3, div.title h4{ text-align:center; }
 
-  div.title h3 { margin-top: 20px; padding-bottom: 5px; }
+  div.title h3 { margin-top: 40px; padding-bottom: 5px; }
 
   div.title{ height:20%; }
 
