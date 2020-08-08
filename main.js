@@ -1,23 +1,27 @@
+//get currency codes
 var fromCur = document.getElementById("fromCurrency");
-var fromAmount = document.getElementById("convertFrom");
 var toCur = document.getElementById("toCurrency");
+
+//get input elements
+var fromAmount = document.getElementById("convertFrom");
 var toAmount = document.getElementById("convertTo");
+
+//get elements displaying the currency symbols
 var changeFromCur = document.getElementById("changeFromCur");
 var changeToCur= document.getElementById("changeToCur");
 
-// const exchange = document.getElementById('arrows-exchange');
-// const rateEl = document.getElementById('rate');
 
 fromAmount.addEventListener('input', calculate);
 toAmount.addEventListener('input', calculate);
 
 
-// const dataURL = '';
+/*function to get attributes containing country flag and currency symbol 
+  and change according based on selected currency code to convert from*/
 function fromFlagAndCurrency() {
 	var changeSrc = fromCur.options[fromCur.selectedIndex].getAttribute("fromSrc");
-  var changeCur = fromCur.options[fromCur.selectedIndex].getAttribute("fromCur");
-  fromImage.setAttribute("src", changeSrc);
-  changeFromCur.innerHTML=changeCur;
+  	var changeCur = fromCur.options[fromCur.selectedIndex].getAttribute("fromCur");
+  	fromImage.setAttribute("src", changeSrc);
+ 	changeFromCur.innerHTML = changeCur;
 }
 
  fromCur.addEventListener("change", function() {
@@ -25,11 +29,14 @@ function fromFlagAndCurrency() {
    calculate();
   }); 
 
+
+/*function to get attributes containing country flag and currency symbol 
+  and change according based on selected currency code to convert to*/
 function toFlagAndCurrency() {
 	var changeSrc = toCur.options[toCur.selectedIndex].getAttribute("toSrc");
-  var changeCur = toCur.options[toCur.selectedIndex].getAttribute("toCur");
-  toImage.setAttribute("src", changeSrc);
-  changeToCur.innerHTML=changeCur;
+  	var changeCur = toCur.options[toCur.selectedIndex].getAttribute("toCur");
+  	toImage.setAttribute("src", changeSrc);
+  	changeToCur.innerHTML=changeCur;
 }
 
  toCur.addEventListener("change", function() {
@@ -37,28 +44,27 @@ function toFlagAndCurrency() {
     calculate();
   }); 
 
-
-
+//function to calculate the rates based on user input
 function calculate() {
-      const fromCurrency = fromCur.value;
-      const toCurrency = toCur.value;
-
-      fetch(`https://openexchangerates.org/api/latest.json?app_id=4555d2dde46a429b8df586d7398c6f2e`)
-		.then(res => res.json())
-    .then(res => {
-			const rate = res.rates[toCurrency];
-			toAmount.value = (fromAmount.value * rate).toFixed(2);
-      
+	const fromCurrency = fromCur.value;
+	const toCurrency = toCur.value;
+	
+	/*fetch API*/
+	fetch(`https://openexchangerates.org/api/latest.json?app_id=4555d2dde46a429b8df586d7398c6f2e`)
+	
+	.then(res => res.json())
+	.then(res => {
+	      	const rate = res.rates[toCurrency];
+		toAmount.value = (fromAmount.value * rate).toFixed(2);
 		})
-    
-    .catch((error)=> {
-      console.log(error);
-  })
+		
+	.catch((error)=> {
+		console.log(error);
+ 		 })
 }
-
 calculate();
 
-
+//IIFE to get current date and time
 (function setTime(){
   var today = new Date();
   
